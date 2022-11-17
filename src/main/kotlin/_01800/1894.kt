@@ -9,7 +9,7 @@ fun main() = with(System.out.bufferedWriter()) {
             val tmp = Point(list[i], list[i + 1])
             if (!points.contains(tmp)) {
                 points.add(tmp)
-            } else if (points.indexOf(tmp) != 1) {
+            } else if (points.indexOf(tmp) != 1) {  // 추가하려는 점이 중복되는 경우엔 중복되는 점이 P2인지 체크하고 아닐 경우엔 P1과 자리를 바꿈
                 points[0] = points[1]
                 points[1] = tmp
             }
