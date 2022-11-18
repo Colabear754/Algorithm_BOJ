@@ -14,7 +14,7 @@ val chars = arrayOf(
 fun main() = with(System.`in`.bufferedReader()) {
     val (p, w) = readLine().split(" ").map { it.toInt() }
     val str = readLine()
-    var sec = addedVal(str, 0) * p
+    var sec = addedVal(str) * p
     for (i in 1..str.lastIndex) {
         if (getNum(str[i]) == 8) {
             sec += p
@@ -28,7 +28,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     println(sec)
 }
 
-fun addedVal(s: String, i: Int) = chars[getNum(s[i])].indexOf(s[i]) + 1
+fun addedVal(s: String, i: Int = 0) = chars[getNum(s[i])].indexOf(s[i]) + 1
 
 fun getNum(c: Char) = when (c) {
     in 'A'..'C' -> 0
