@@ -5,8 +5,8 @@ fun main() = with(System.`in`.bufferedReader()) {
     val last = word.lastIndex
     var result = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
 
-    for (i in 0..word.lastIndex - 2) {
-        for (j in i + 1..word.lastIndex - 1) {
+    for (i in 0..last - 2) {
+        for (j in i + 1..last - 1) {
             val new = word.slice(0..i).reversed() + word.slice(i + 1..j).reversed() + word.slice(j + 1..last).reversed()
             result = minOf(result, new)
         }
