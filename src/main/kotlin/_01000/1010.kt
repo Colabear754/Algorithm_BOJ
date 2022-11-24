@@ -12,15 +12,15 @@ fun main() = with(System.`in`.bufferedReader()) {
 }
 
 fun comb(n: Int, k: Int): BigInteger {
-    val a = minOf(k, n - k)
-    val b = maxOf(k, n - k)
+    var a = n
+    val b = minOf(k, n - k)
     var result = 1.toBigInteger()
-    var minFac = 1L
-    for (i in n downTo b + 1) {
-        result = result.multiply(i.toBigInteger())
+    var kFac = 1L
+    repeat(b) {
+        result = result.multiply(a--.toBigInteger())
     }
-    for (i in 2..a) {
-        minFac *= i
+    for (i in 2..b) {
+        kFac *= i
     }
-    return result.divide(minFac.toBigInteger())
+    return result.divide(kFac.toBigInteger())
 }
