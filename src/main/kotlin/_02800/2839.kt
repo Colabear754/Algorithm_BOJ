@@ -2,9 +2,8 @@ package _02800
 
 fun main() = with(System.`in`.bufferedReader()) {
     val n = readLine().toInt()
-    var rest = n
     var sugar = n / 5
-    rest %= 5
+    var rest = n % 5
     while (rest in 1..n) {
         if (rest % 3 != 0) {
             sugar--
@@ -14,8 +13,5 @@ fun main() = with(System.`in`.bufferedReader()) {
             rest = 0
         }
     }
-    if (rest > 0) {
-        sugar = -1
-    }
-    println(sugar)
+    println(if (sugar > n) -1 else sugar)
 }
