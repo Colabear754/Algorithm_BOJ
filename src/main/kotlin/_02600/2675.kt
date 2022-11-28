@@ -5,7 +5,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     val c = readLine().toInt()
     repeat(c) {
         val (n, str) = readLine().split(" ")
-        for (c in str) {
+        for (ch in str) {
             repeat(n.toInt()) {
                 sb.append(c)
             }
