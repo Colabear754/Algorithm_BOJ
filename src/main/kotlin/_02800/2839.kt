@@ -13,5 +13,5 @@ fun main() = with(System.`in`.bufferedReader()) {
             rest = 0
         }
     }
-    println(if (sugar > n) -1 else sugar)
+    println(if (rest > n) -1 else sugar)
 }
