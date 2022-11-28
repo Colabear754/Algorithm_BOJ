@@ -2,19 +2,19 @@ package _02800
 
 fun main() = with(System.`in`.bufferedReader()) {
     val n = readLine().toInt()
-    var tmp = n
+    var mod = n
     var sugar = n / 5
-    tmp %= 5
-    while (tmp in 1..n) {
-        if (tmp % 3 != 0) {
+    mod %= 5
+    while (mod in 1..n) {
+        if (mod % 3 != 0) {
             sugar--
-            tmp += 5
+            mod += 5
         } else {
-            sugar += tmp / 3
-            tmp = 0
+            sugar += mod / 3
+            mod = 0
         }
     }
-    if (tmp > 0) {
+    if (mod > 0) {
         sugar = -1
     }
     println(sugar)
