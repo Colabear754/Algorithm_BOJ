@@ -3,10 +3,10 @@ package _04900
 import kotlin.math.sqrt
 
 fun main() = with(System.`in`.bufferedReader()) {
-    val bw = System.out.bufferedWriter()
+    val sb = StringBuilder()
     val cases = ArrayList<Int>()
     while (readLine().also { cases.add(it.toInt()) } != "0") {}
-    cases.remove(0)
+    cases.removeAt(cases.lastIndex)
     val max = 123456 * 2
     val isPrime = BooleanArray(max + 1)
     isPrime[0] = true
@@ -19,7 +19,7 @@ fun main() = with(System.`in`.bufferedReader()) {
         }
     }
     for (t in cases) {
-        bw.write("${isPrime.slice(t + 1..2 * t).count { !it }}\n")
+        sb.append("${isPrime.slice(t + 1..2 * t).count { !it }}\n")
     }
-    bw.close()
+    println(sb)
 }
