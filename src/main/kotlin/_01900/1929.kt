@@ -8,10 +8,8 @@ fun main() = with(System.out.bufferedWriter()) {
     var i = 2
     while (i * i <= n) {
         if (!check[i]) {
-            var j = i * i
-            while (j <= n) {
+            for (j in i * i..n step i) {
                 check[j] = true
-                j += i
             }
         }
         i++
