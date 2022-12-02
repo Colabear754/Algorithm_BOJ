@@ -5,7 +5,7 @@ import java.util.Stack
 fun main() = with(System.`in`.bufferedReader()) {
     val bw = System.out.bufferedWriter()
     var str: String
-    loop@ while (readLine().also { str = it.replace("[a-zA-Z\\s.]".toRegex(), "") } != ".") {
+    loop@ while (readLine().also { str = it } != ".") {
         val stack = Stack<Char>()
         for (c in str) {
             when (c) {
