@@ -1,33 +1,29 @@
 package _07600
 
 import java.util.StringTokenizer
-import java.util.TreeSet
+import java.util.TreeMap
 
 fun main() = with(System.`in`.bufferedReader()) {
     val sb = StringBuilder()
     var st: StringTokenizer
     var n: Long
     repeat(readLine().toInt()) {
-        val ts = TreeSet<Long>()
-        val cntMap = HashMap<Long, Int>()
-        for (i in 1..readLine().toInt()) {
+        val tm = TreeMap<Long, Int>()
+        repeat(readLine().toInt()) {
             st = StringTokenizer(readLine())
             when (st.nextToken(" ")) {
-                "I" -> {
-                    ts.add(st.nextToken(" ").toLong().also { n = it })
-                    cntMap[n] = cntMap.getOrDefault(n, 0) + 1
-                }
+                "I" -> tm[st.nextToken(" ").toLong().also { n = it }] = tm.getOrDefault(n, 0) + 1
                 "D" -> {
-                    if (ts.isEmpty()) continue
-                    val key = if (st.nextToken() == "1") ts.last() else ts.first()
-                    val cnt = cntMap[key]!! - 1
-                    cntMap[key] = cnt
-                    if (cnt == 0) ts.remove(key)
+                    if (tm.isNotEmpty()) {
+                        val key = if (st.nextToken() == "1") tm.lastKey() else tm.firstKey()
+                        if (tm[key] == 1) tm.remove(key)
+                        else tm[key] = tm[key]!! - 1
+                    }
                 }
             }
         }
 
-        sb.append("${if (ts.isEmpty()) "EMPTY" else "${ts.last()} ${ts.first()}"}\n")
+        sb.append("${if (tm.isEmpty()) "EMPTY" else "${tm.lastKey()} ${tm.firstKey()}"}\n")
     }
     println(sb)
 }
