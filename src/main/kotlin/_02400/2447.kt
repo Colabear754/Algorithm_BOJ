@@ -12,10 +12,10 @@ fun main() = with(System.`in`.bufferedReader()) {
     bw.close()
 }
 
-fun star(i: Int, j: Int, n: Int) {
+fun star(w: Int, h: Int, n: Int) {
     when {
         n == 1 -> bw.write("*")
-        ((i / (n / 3)) % 3) * ((j / (n / 3)) % 3) == 1 -> bw.write(" ")
-        else -> star(i, j, n / 3)
+        ((w / (n / 3)) % 3) * ((h / (n / 3)) % 3) == 1 -> bw.write(" ")
+        else -> star(w, h, n / 3)
     }
 }
