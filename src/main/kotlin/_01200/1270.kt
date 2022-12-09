@@ -1,18 +1,19 @@
 package _01200
 
-import java.util.Scanner
+import java.util.StringTokenizer
 import kotlin.math.abs
 
-fun main() = with(Scanner(System.`in`)) {
+fun main() = with(System.`in`.bufferedReader()) {
     val sb = StringBuilder()
     val military = HashMap<Military, Int>()
-    repeat(nextInt()) {
+    repeat(readLine().toInt()) {
         System.gc()
-        val t = nextInt()
+        val st = StringTokenizer(readLine())
+        val t = st.nextToken().toInt()
         var max = 0
         var strongest: Military? = null
         repeat(t) {
-            next().also {
+            st.nextToken().also {
                 val tmp = if (it.first() == '-') Military(abs(it.toInt()).toUInt(), 1.toByte()) else Military(it.toUInt(), 0.toByte())
                 military[tmp] = military[tmp]?.plus(1) ?: 1
                 if ((military[tmp] ?: 0) > max) {
