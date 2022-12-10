@@ -11,7 +11,7 @@ fun main() = with(System.`in`.bufferedReader()) {
             val id = nextToken()
             when (nextToken()) {
                 "4" -> if (id != "megalusion") {
-                    if (submit.containsKey(id)) wrong += submit[id]!!
+                    wrong += submit[id] ?: 0
                     submit[id] = 0
                 }
                 else -> if (submit[id] != 0) submit[id] = submit[id]?.plus(1) ?: 1
