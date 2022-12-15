@@ -1,18 +1,19 @@
 package _11300
 
+import java.math.BigDecimal
 import java.util.StringTokenizer
-import kotlin.math.roundToLong
 
 fun main() = with(System.`in`.bufferedReader()) {
     val players = Array(2) {
         readLine().let {
             StringTokenizer(it).run {
                 Player(
-                    nextToken().toInt(),
-                    nextToken().toInt(),
-                    nextToken().toDouble() / 100,
-                    nextToken().toDouble() / 100,
-                    nextToken().toDouble() / 100)
+                    BigDecimal(nextToken()),
+                    BigDecimal(nextToken()),
+                    BigDecimal(nextToken()).divide(100.toBigDecimal()),
+                    BigDecimal(nextToken()).divide(100.toBigDecimal()),
+                    BigDecimal(nextToken()).divide(100.toBigDecimal())
+                )
             }
         }
     }
@@ -20,11 +21,11 @@ fun main() = with(System.`in`.bufferedReader()) {
         readLine().let {
             StringTokenizer(it).run {
                 Player(
-                    nextToken().toInt(),
-                    nextToken().toInt(),
-                    nextToken().toDouble() / 100,
-                    nextToken().toDouble() / 100,
-                    nextToken().toDouble() / 100)
+                    BigDecimal(nextToken()),
+                    BigDecimal(nextToken()),
+                    BigDecimal(nextToken()).divide(100.toBigDecimal()),
+                    BigDecimal(nextToken()).divide(100.toBigDecimal()),
+                    BigDecimal(nextToken()).divide(100.toBigDecimal()))
             }
         }
     }
@@ -40,9 +41,16 @@ fun main() = with(System.`in`.bufferedReader()) {
     )
 }
 
-class Player(var attack: Int, var strength: Int, var critical: Double, var criticalDamage: Double, var attackSpeed: Double) {
+class Player(var attack: BigDecimal,
+             var strength: BigDecimal,
+             var critical: BigDecimal,
+             var criticalDamage: BigDecimal,
+             var attackSpeed: BigDecimal) {
     val power
-        get() = (attack * (1 + strength.toDouble() / 100) * ((1 - minOf(1.0, critical)) + minOf(1.0, critical) * criticalDamage) * (1 + attackSpeed)).roundToLong()
+        get() = attack *
+                (1.toBigDecimal() + strength.divide(100.toBigDecimal())) *
+                ((1.toBigDecimal() - minOf(BigDecimal(1), critical)) + minOf(BigDecimal(1), critical) * criticalDamage) *
+                (1.toBigDecimal() + attackSpeed)
 
     operator fun plus(other: Player) = Player(
         this.attack + other.attack,
