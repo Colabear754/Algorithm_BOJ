@@ -5,10 +5,9 @@ import java.util.StringTokenizer
 fun main() = with(System.`in`.bufferedReader()) {
     val (n, s) = readLine().split(' ').map { it.toInt() }
     val st = StringTokenizer(readLine())
-    val arr = IntArray(n + 1)
     val sum = IntArray(n + 1)
     repeat(n) { i ->
-        arr[i + 1] = st.nextToken().toInt().also { n -> sum[i + 1] = sum[i] + n }
+        sum[i + 1] = sum[i] + st.nextToken().toInt()
     }
     var minLength = 100001
     var start = 0
