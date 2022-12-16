@@ -19,6 +19,10 @@ fun main() = with(System.`in`.bufferedReader()) {
             sum -= holes[start]
             start++
         }
+        if (start > end) {
+            sum += holes[end]
+            end++
+        }
     }
     println(max)
 }
