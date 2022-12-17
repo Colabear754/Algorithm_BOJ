@@ -6,8 +6,8 @@ fun main() = with(System.`in`.bufferedReader()) {
     val (n, s) = readLine().split(' ').map { it.toInt() }
     val st = StringTokenizer(readLine())
     val sum = IntArray(n + 1)
-    repeat(n) { i ->
-        sum[i + 1] = sum[i] + st.nextToken().toInt()
+    repeat(n) {
+        sum[it + 1] = sum[it] + st.nextToken().toInt()
     }
     var minLength = 100001
     var start = 0
