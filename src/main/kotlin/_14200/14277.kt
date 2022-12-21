@@ -8,8 +8,7 @@ fun main() = with(System.`in`.bufferedReader()) {
         if (a != c && (a >= c || (c - a) % b != 0L)) count++
     } else {
         while (c <= u) {
-            count++
-            if (c >= a && (c - a) % b == 0L) count--
+            if (c < a || (c - a) % b != 0L) count++
             c *= d
         }
     }
