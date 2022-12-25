@@ -25,8 +25,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     }
 
     while (pq.isNotEmpty()) {
-        val temp = pq.poll()
-        bw.write("${temp.name} ${temp.popularity}\n")
+        pq.poll().also { bw.write("${it.name} ${it.popularity}\n") }
     }
 
     bw.close()
