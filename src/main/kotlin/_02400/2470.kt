@@ -13,15 +13,12 @@ fun main() = with(System.`in`.bufferedReader()) {
     val result = IntArray(2)
     while (start < end) {
         val sum = abs(ph[start] + ph[end])
-
         if (sum < min) {
             min = sum
             result[0] = start
             result[1] = end
         }
-
         if (sum == 0) break
-
         if (ph[start] + ph[end] > 0) end--
         else start++
     }
