@@ -11,8 +11,13 @@ fun main() = with(System.`in`.bufferedReader()) {
     for (i in 1..n) {
         prefixSum[i] = prefixSum[i - 1] + arr[i - 1]
     }
+    var l: Int
+    var r: Int
     repeat(q) {
-        val (l, r) = readLine().split(' ').map { it.toInt() }
+        StringTokenizer(readLine()).apply {
+            l = nextToken().toInt()
+            r = nextToken().toInt()
+        }
         bw.write("${prefixSum[r] - prefixSum[l - 1]}\n")
     }
     bw.close()
