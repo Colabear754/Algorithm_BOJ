@@ -24,12 +24,4 @@ fun main() = with(System.`in`.bufferedReader()) {
 
 fun lcm(a: Int, b: Int) = a * b / gcd(a, b)
 
-fun gcd(a: Int, b: Int): Int {
-    var num1 = a
-    var num2 = b
-    while (num2 != 0) {
-        num1 = num2.also { num2 = num1 % num2 }
-    }
-
-    return num1
-}
+fun gcd(a: Int, b: Int): Int = if (a % b == 0) b else gcd(b, a % b)
