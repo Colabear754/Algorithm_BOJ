@@ -11,12 +11,11 @@ fun main() = with(System.`in`.bufferedReader()) {
         StringTokenizer(readLine()).apply { scheduler.add(Process(nextToken().toInt(), nextToken().toInt(), nextToken().toInt())) }
     }
     for (i in 1..t) {
-        if (scheduler.isEmpty()) break
-        val process = scheduler.poll().apply {
+        val process = scheduler.poll()?.apply {
             bw.write("$id\n")
             time--
             priority--
-        }
+        } ?: break
 
         if (process.time > 0)
             scheduler.add(process)
