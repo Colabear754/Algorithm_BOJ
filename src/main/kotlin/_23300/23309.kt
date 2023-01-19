@@ -48,7 +48,7 @@ fun main() = with(System.`in`.bufferedReader()) {
 class Subway(val prev: IntArray = IntArray(1000001), val next: IntArray = IntArray(1000001)) {
     fun addStation(prev: Int, new: Int) {
         if (prev == 0) {
-            this.prev[new] = next[new].also { next[new] = new }
+            this.prev[new] = new.also { next[new] = it }
             return
         }
         this.prev[new] = prev
