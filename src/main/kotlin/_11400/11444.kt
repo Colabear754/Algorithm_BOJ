@@ -2,21 +2,24 @@ package _11400
 
 import java.math.BigInteger
 
-val fibonacciMemory = HashMap<BigInteger, Long>().apply {
-    put(BigInteger.ZERO, 0L)
-    put(BigInteger.ONE, 1L)
-}
-
 fun main() = with(System.`in`.bufferedReader()) {
     println(fibonacci(readLine().toBigInteger()))
 }
 
-fun fibonacci(n: BigInteger): Long {
+private val B0 = 0.toBigInteger()
+private val B1 = 1.toBigInteger()
+private val B2 = 2.toBigInteger()
+private val fibonacciMemory = HashMap<BigInteger, Long>().apply {
+    put(B0, 0L)
+    put(B1, 1L)
+}
+
+private fun fibonacci(n: BigInteger): Long {
     if (fibonacciMemory[n] == null) {
-        val f_n = fibonacci(n / 2.toBigInteger())
-        when (n % 2.toBigInteger()) {
-            BigInteger.ZERO -> fibonacciMemory[n] = (f_n * (2 * fibonacci(n / 2.toBigInteger() - BigInteger.ONE) + f_n)) % 1000000007
-            BigInteger.ONE -> fibonacciMemory[n] = (f_n * f_n + fibonacci(n / 2.toBigInteger() + BigInteger.ONE) * fibonacci(n / 2.toBigInteger() + BigInteger.ONE)) % 1000000007
+        val f_n = fibonacci(n / B2)
+        when (n % B2) {
+            B0 -> fibonacciMemory[n] = (f_n * (2 * fibonacci(n / B2 - B1) + f_n)) % 1000000007
+            B1 -> fibonacciMemory[n] = (f_n * f_n + fibonacci(n / B2 + B1) * fibonacci(n / B2 + B1)) % 1000000007
         }
     }
 
