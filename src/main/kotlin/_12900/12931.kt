@@ -7,12 +7,8 @@ fun main() = with(System.`in`.bufferedReader()) {
     var array = StringTokenizer(readLine()).run { IntArray(n) { nextToken().toInt() } }
     var count = 0
     while (true) {
-        var isClear = true
-        var isChanged = false
         array = array.map {
-            if (it != 0) isClear = false
             if (it % 2 == 1) {
-                isChanged = true
                 count++
                 it - 1
             } else {
@@ -20,15 +16,10 @@ fun main() = with(System.`in`.bufferedReader()) {
             }
         }.toIntArray()
 
-        if (isClear) break
+        if (array.count { it != 0 } == 0) break
 
-        if (!isChanged) {
-            array = array.map {
-                if (it != 0) isClear = false
-                it / 2
-            }.toIntArray()
-            count++
-        }
+        array = array.map { it / 2 }.toIntArray()
+        count++
     }
     println(count)
 }
