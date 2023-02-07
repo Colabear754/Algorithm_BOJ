@@ -1,6 +1,6 @@
 package _09300
 
-import java.util.StringTokenizer
+import java.util.*
 
 fun main() = with(System.`in`.bufferedReader()) {
     val bw = System.out.bufferedWriter()
@@ -15,8 +15,8 @@ fun main() = with(System.`in`.bufferedReader()) {
             }
         }
         var result = 1
-        for (entry in clothes.entries) {
-            result *= entry.value + 1
+        for ((key, value) in clothes) {
+            result *= value + 1
         }
         bw.write("${result - 1}\n")
     }
