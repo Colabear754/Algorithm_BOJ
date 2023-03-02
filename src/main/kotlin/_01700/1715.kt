@@ -8,10 +8,6 @@ fun main() = with(System.`in`.bufferedReader()) {
         cards.add(readLine().toInt())
     }
     var sum = 0
-    while (cards.size > 1) {
-        val newCard = cards.poll() + cards.poll()
-        sum += newCard
-        cards.add(newCard)
-    }
+    while (cards.size > 1) sum += (cards.poll() + cards.poll()).also { cards.add(it) }
     println(sum)
 }
