@@ -29,7 +29,7 @@ fun main() = with(System.`in`.bufferedReader()) {
                 continue@loop
             }
         }
-        bw.write("Goldbach's conjecture is wrong.")
+        bw.write("Goldbach's conjecture is wrong.\n")
     }
     bw.close()
 }
