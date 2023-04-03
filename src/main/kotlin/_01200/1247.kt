@@ -1,20 +1,14 @@
 package _01200
 
-import java.io.BufferedWriter
-import java.io.OutputStreamWriter
 import java.math.BigInteger
 
-fun main() {
-    val writer = BufferedWriter(OutputStreamWriter(System.out))
+fun main() = with(System.`in`.bufferedReader()) {
+    val bw = System.out.bufferedWriter()
     repeat(3) {
-        val n = readln().toInt()
-        var a = BigInteger("0")
-        repeat(n) {
-            a = a.plus(BigInteger(readln()))
+        Array(readLine().toInt()) { readLine().toBigInteger() }.sumOf { it }.also {
+            val sign = it.compareTo(BigInteger.ZERO)
+            bw.write(if (sign > 0) "+\n" else if (sign < 0) "-\n" else "0\n")
         }
-        val result = a.compareTo(BigInteger("0"))
-        writer.write(if (result > 0) "+\n" else if (result < 0) "-\n" else "0\n")
     }
-    writer.flush()
-    writer.close()
+    bw.close()
 }
