@@ -16,7 +16,7 @@ fun main() = with(System.`in`.bufferedReader()) {
                 q_matrix *= q_matrix
                 n /= 2
             }
-            bw.write("${base[2][1] % 998244353}\n")
+            bw.write("${base[2][1]}\n")
         }
     }
     bw.close()
