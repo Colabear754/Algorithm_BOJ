@@ -1,4 +1,4 @@
-package _05800
+package _01700
 
 fun main() = with(System.`in`.bufferedReader()) {
     val n = readLine().toInt()
