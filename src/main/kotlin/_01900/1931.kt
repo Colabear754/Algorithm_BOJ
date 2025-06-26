@@ -15,6 +15,6 @@ fun main() = with(System.`in`.bufferedReader()) {
     println(cnt)
 }
 
-class Meeting(var start: Int, var end: Int) : Comparable<Meeting> {
+private class Meeting(var start: Int, var end: Int) : Comparable<Meeting> {
     override fun compareTo(other: Meeting) = if (this.end == other.end) this.start - other.start else this.end - other.end
 }
