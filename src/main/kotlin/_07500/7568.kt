@@ -18,6 +18,6 @@ fun main() = with(System.`in`.bufferedReader()) {
     println(sb)
 }
 
-class Person(val w: Int, val h: Int) : Comparable<Person> {
+private class Person(val w: Int, val h: Int) : Comparable<Person> {
     override fun compareTo(other: Person) = if ((this.w - other.w) * (this.h - other.h) > 0) this.w - other.w else 0
 }
