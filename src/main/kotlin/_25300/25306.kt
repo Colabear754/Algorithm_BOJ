@@ -5,7 +5,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     print(b.cumulateXOR() xor (a - 1).cumulateXOR())
 }
 
-fun Long.cumulateXOR() = when (this % 4) {
+private fun Long.cumulateXOR() = when (this % 4) {
     0L -> this
     1L -> 1
     2L -> this + 1
