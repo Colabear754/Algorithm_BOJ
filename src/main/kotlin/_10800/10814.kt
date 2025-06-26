@@ -16,7 +16,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     bw.close()
 }
 
-class Person(val age: Int, val name: String, val order: Int): Comparable<Person> {
+private class Person(val age: Int, val name: String, val order: Int): Comparable<Person> {
     override fun toString() = "$age $name"
     override fun compareTo(other: Person) = if (this.age - other.age != 0) this.age - other.age else this.order - other.order
 }
