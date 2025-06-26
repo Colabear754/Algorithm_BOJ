@@ -41,7 +41,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     )
 }
 
-class Player(var attack: BigDecimal,
+private class Player(var attack: BigDecimal,
              var strength: BigDecimal,
              var critical: BigDecimal,
              var criticalDamage: BigDecimal,
