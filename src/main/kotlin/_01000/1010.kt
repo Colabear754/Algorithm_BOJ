@@ -11,7 +11,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     bw.close()
 }
 
-fun comb(n: Int, k: Int): BigInteger {
+private fun comb(n: Int, k: Int): BigInteger {
     var a = n
     val b = minOf(k, n - k)
     var result = 1.toBigInteger()
