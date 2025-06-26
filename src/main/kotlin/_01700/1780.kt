@@ -13,7 +13,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     println(results.joinToString("\n"))
 }
 
-fun cut(r: Int, c: Int, size: Int, paper: Array<IntArray>, results: IntArray) {
+private fun cut(r: Int, c: Int, size: Int, paper: Array<IntArray>, results: IntArray) {
     var base = paper[c][r]
     for (i in c until c + size) {
         for (j in r until r + size) {
