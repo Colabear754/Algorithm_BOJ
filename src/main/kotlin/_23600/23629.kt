@@ -18,7 +18,7 @@ fun main() = with(System.`in`.bufferedReader()) {
                 else -> numbers.add(
                     try {
                         it.toLong()
-                    } catch (e: NumberFormatException) {
+                    } catch (_: NumberFormatException) {
                         println("Madness!")
                         return@with
                     }
@@ -45,7 +45,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     bw.close()
 }
 
-fun String.stringToNum() = this
+private fun String.stringToNum() = this
     .replace("ONE", "1")
     .replace("TWO", "2")
     .replace("THREE", "3")
@@ -57,7 +57,7 @@ fun String.stringToNum() = this
     .replace("NINE", "9")
     .replace("ZERO", "0")
 
-fun String.numToString() = this
+private fun String.numToString() = this
     .replace("1", "ONE")
     .replace("2", "TWO")
     .replace("3", "THREE")
