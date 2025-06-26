@@ -31,6 +31,6 @@ fun main() = with(System.`in`.bufferedReader()) {
     bw.close()
 }
 
-class Student(val name: String, var popularity: Int) : Comparable<Student> {
+private class Student(val name: String, var popularity: Int) : Comparable<Student> {
     override fun compareTo(other: Student) = if (this.popularity == other.popularity) this.name.compareTo(other.name) else other.popularity - this.popularity
 }
