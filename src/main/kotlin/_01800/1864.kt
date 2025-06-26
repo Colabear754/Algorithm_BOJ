@@ -16,7 +16,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     bw.close()
 }
 
-fun getNum(c: Char) = when (c) {
+private fun getNum(c: Char) = when (c) {
     '-' -> 0
     '\\' -> 1
     '(' -> 2
