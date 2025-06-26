@@ -20,7 +20,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     println(result)
 }
 
-fun index(c: Char) = when(c) {
+private fun index(c: Char) = when(c) {
     'A' -> 0
     'G' -> 1
     'C' -> 2
