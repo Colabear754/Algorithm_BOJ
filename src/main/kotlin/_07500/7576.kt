@@ -6,14 +6,14 @@ fun main() = with(System.`in`.bufferedReader()) {
     val (m, n) = readLine().split(' ').map { it.toInt() }
     var st: StringTokenizer
     val box = Array(n) { IntArray(m) }
-    val queue: Queue<Position1> = LinkedList()
+    val queue: Queue<Position> = LinkedList()
     var unripeTomato = 0
     var day = 0
     repeat(n) { i ->
         st = StringTokenizer(readLine())
         repeat(m) { j ->
             box[i][j] = st.nextToken().toInt()
-            if (box[i][j] == 1) queue.add(Position1(i, j))
+            if (box[i][j] == 1) queue.add(Position(i, j))
             else if (box[i][j] == 0) unripeTomato++
         }
     }
@@ -32,22 +32,22 @@ fun main() = with(System.`in`.bufferedReader()) {
             if (box[x][y] > day) day = box[x][y]
             if (x > 0 && box[x - 1][y] == 0) {
                 unripeTomato--
-                queue.add(Position1(x - 1, y))
+                queue.add(Position(x - 1, y))
                 box[x - 1][y] = box[x][y] + 1
             }
             if (y > 0 && box[x][y - 1] == 0) {
                 unripeTomato--
-                queue.add(Position1(x, y - 1))
+                queue.add(Position(x, y - 1))
                 box[x][y - 1] = box[x][y] + 1
             }
             if (x < n - 1 && box[x + 1][y] == 0) {
                 unripeTomato--
-                queue.add(Position1(x + 1, y))
+                queue.add(Position(x + 1, y))
                 box.get(x + 1)[y] = box[x][y] + 1
             }
             if (y < m - 1 && box[x][y + 1] == 0) {
                 unripeTomato--
-                queue.add(Position1(x, y + 1))
+                queue.add(Position(x, y + 1))
                 box[x][y + 1] = box[x][y] + 1
             }
         }
@@ -56,4 +56,4 @@ fun main() = with(System.`in`.bufferedReader()) {
     else println(day - 1)
 }
 
-class Position1(val x: Int, val y: Int)
+private class Position(val x: Int, val y: Int)
