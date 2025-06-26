@@ -45,6 +45,6 @@ fun main() = with(System.`in`.bufferedReader()) {
     bw.close()
 }
 
-class Customer(val id: Int, var needTime: Int, val enterTime: Int): Comparable<Customer> {
+private class Customer(val id: Int, var needTime: Int, val enterTime: Int): Comparable<Customer> {
     override fun compareTo(other: Customer) = this.enterTime - other.enterTime
 }
