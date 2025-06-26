@@ -16,7 +16,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     bw.close()
 }
 
-class Point(var x: Int, var y: Int) : Comparable<Point> {
+private class Point(var x: Int, var y: Int) : Comparable<Point> {
     override fun compareTo(other: Point) = if (this.x - other.x != 0) this.x - other.x else this.y - other.y
     override fun toString() = "$x $y"
 }
