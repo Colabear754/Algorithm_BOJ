@@ -14,7 +14,7 @@ fun main() = with(System.out.bufferedWriter()) {
     close()
 }
 
-fun d(n: Int): Int {
+private fun d(n: Int): Int {
     var sum = n
     var num = n
 
