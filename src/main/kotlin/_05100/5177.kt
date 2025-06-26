@@ -24,7 +24,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     bw.close()
 }
 
-fun String.trimSpecialChar() = this.replace("\\s*\\(\\s*".toRegex(), "(")
+private fun String.trimSpecialChar() = this.replace("\\s*\\(\\s*".toRegex(), "(")
     .replace("\\s*\\)\\s*".toRegex(), ")")
     .replace("\\s*:\\s*".toRegex(), ":")
     .replace("\\s*;\\s*".toRegex(), ";")
