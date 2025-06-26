@@ -6,7 +6,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     println(readLine().split(' ').map { it.toInt() }.let { comb(it[0], it[1]) })
 }
 
-fun comb(n: Int, k: Int): BigInteger {
+private fun comb(n: Int, k: Int): BigInteger {
     var a = n
     var result = BigInteger.ONE
     var kFac = BigInteger.ONE
