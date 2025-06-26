@@ -45,7 +45,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     println(sb)
 }
 
-class Subway(val prev: IntArray = IntArray(1000001), val next: IntArray = IntArray(1000001)) {
+private class Subway(val prev: IntArray = IntArray(1000001), val next: IntArray = IntArray(1000001)) {
     fun addStation(prev: Int, new: Int) {
         if (prev == 0) {
             this.prev[new] = new.also { next[new] = it }
