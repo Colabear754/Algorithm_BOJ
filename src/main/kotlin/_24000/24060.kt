@@ -2,10 +2,10 @@ package _24000
 
 import java.util.StringTokenizer
 
-var result = -1
-var cnt = 0
-var k = 0
-val sorted = IntArray(500000)
+private var result = -1
+private var cnt = 0
+private var k = 0
+private val sorted = IntArray(500000)
 
 fun main() = with(System.`in`.bufferedReader()) {
     val n: Int
@@ -16,7 +16,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     println(result)
 }
 
-fun mergeSort(arr: IntArray, p: Int, r: Int) {
+private fun mergeSort(arr: IntArray, p: Int, r: Int) {
     if (result != -1) return
     if (p < r) {
         val q = (p + r) / 2
@@ -26,7 +26,7 @@ fun mergeSort(arr: IntArray, p: Int, r: Int) {
     }
 }
 
-fun merge(arr: IntArray, p: Int, q: Int, r: Int) {
+private fun merge(arr: IntArray, p: Int, q: Int, r: Int) {
     if (result != -1) return
     var i = p
     var j = q + 1
