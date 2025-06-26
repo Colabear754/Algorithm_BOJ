@@ -3,16 +3,16 @@ package _01000
 import kotlin.math.pow
 import kotlin.system.exitProcess
 
-val input = readln().split(' ').map { it.toInt() }
-val r = input[1]
-val c = input[2]
-var cnt = 0
+private val input = readln().split(' ').map { it.toInt() }
+private val r = input[1]
+private val c = input[2]
+private var cnt = 0
 
 fun main() = with(System.`in`.bufferedReader()) {
     Z(input[0], 0, 0)
 }
 
-fun Z(n: Int, x: Int, y: Int) {
+private fun Z(n: Int, x: Int, y: Int) {
     if (n == 1) {
         visit(x, y)
         visit(x + 1, y)
@@ -33,7 +33,7 @@ fun Z(n: Int, x: Int, y: Int) {
     }
 }
 
-fun visit(x: Int, y: Int) {
+private fun visit(x: Int, y: Int) {
     if (c == x && r == y) {
         println(cnt)
         exitProcess(0)
