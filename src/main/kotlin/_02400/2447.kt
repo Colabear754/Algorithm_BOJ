@@ -1,6 +1,6 @@
 package _02400
 
-val bw = System.out.bufferedWriter()
+private val bw = System.out.bufferedWriter()
 fun main() = with(System.`in`.bufferedReader()) {
     val n = readLine().toInt()
     repeat(n) { i ->
@@ -12,7 +12,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     bw.close()
 }
 
-fun star(w: Int, h: Int, n: Int) {
+private fun star(w: Int, h: Int, n: Int) {
     when {
         n == 1 -> bw.write("*")
         ((w / (n / 3)) % 3) * ((h / (n / 3)) % 3) == 1 -> bw.write(" ")
