@@ -17,6 +17,6 @@ fun main() = with(System.`in`.bufferedReader()) {
     bw.close()
 }
 
-class Person(val name: String, val height: Double) {
+private class Person(val name: String, val height: Double) {
     override fun toString() = this.name
 }
