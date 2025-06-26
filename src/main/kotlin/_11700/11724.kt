@@ -1,7 +1,7 @@
 package _11700
 
-val graph = Array(1001) { ArrayList<Int>() }
-val visited = BooleanArray(1001)
+private val graph = Array(1001) { ArrayList<Int>() }
+private val visited = BooleanArray(1001)
 
 fun main() = with(System.`in`.bufferedReader()) {
     val (n, m) = readLine().split(' ').map { it.toInt() }
@@ -21,7 +21,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     println(result)
 }
 
-fun dfs(cur: Int) {
+private fun dfs(cur: Int) {
     for (n in graph[cur]) {
         if (!visited[n]) {
             visited[n] = true
