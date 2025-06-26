@@ -16,4 +16,4 @@ private fun fibonacci(n: Long): Long {
     }
 }
 
-fun gcd(a: Long, b: Long): Long = if (a % b == 0L) b else gcd(b, a % b)
+private fun gcd(a: Long, b: Long): Long = if (a % b == 0L) b else gcd(b, a % b)
