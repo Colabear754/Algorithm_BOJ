@@ -17,5 +17,5 @@ fun main() = with(System.`in`.bufferedReader()) {
     println((sides[2] - sides[0]) * 2)
 }
 
-fun distance(p1: Point, p2: Point) = sqrt((p1.x - p2.x).pow(2) + (p1.y - p2.y).pow(2))
-class Point(val x: Double, val y: Double)
+private fun distance(p1: Point, p2: Point) = sqrt((p1.x - p2.x).pow(2) + (p1.y - p2.y).pow(2))
+private class Point(val x: Double, val y: Double)
