@@ -21,7 +21,7 @@ fun main() = with(System.out.bufferedWriter()) {
     close()
 }
 
-class Point(val x: Double, val y: Double) {
+private class Point(val x: Double, val y: Double) {
     override fun toString() = "%.3f %.3f".format(x, y)
     // x, y좌표가 같으면 같은 객체로 처리하기 위한 override 메소드들
     override fun equals(other: Any?) = (other as Point).x == this.x && other.y == this.y
