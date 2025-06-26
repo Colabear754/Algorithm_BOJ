@@ -1,14 +1,14 @@
 package _11700
 
-var count = 0
-val sb = StringBuilder()
+private var count = 0
+private val sb = StringBuilder()
 fun main() = with(System.`in`.bufferedReader()) {
     hanoi(readLine().toInt(), 1, 2, 3)
     println(count)
     println(sb)
 }
 
-fun hanoi(n: Int, from: Int, mid: Int, to: Int) {
+private fun hanoi(n: Int, from: Int, mid: Int, to: Int) {
     if (n <= 1) {
         count++
         sb.append("$from $to\n")
