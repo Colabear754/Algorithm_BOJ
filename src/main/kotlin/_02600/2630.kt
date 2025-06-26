@@ -2,10 +2,10 @@ package _02600
 
 import java.util.StringTokenizer
 
-val n = readln().toInt()
-val paper = Array(n) { ByteArray(n) }
-var w = 0
-var b = 0
+private val n = readln().toInt()
+private val paper = Array(n) { ByteArray(n) }
+private var w = 0
+private var b = 0
 
 fun main() = with(System.`in`.bufferedReader()) {
     var st: StringTokenizer
@@ -17,7 +17,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     println("$w\n$b")
 }
 
-fun cp(x: Int, y: Int, size: Int) {
+private fun cp(x: Int, y: Int, size: Int) {
     val next = size / 2
     var cnt = 0
     for (i in x until x + size) {
