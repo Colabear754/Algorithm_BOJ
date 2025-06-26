@@ -16,7 +16,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     bw.close()
 }
 
-fun bugs(x: Int, y: Int, farm: Array<BooleanArray>): Int {
+private fun bugs(x: Int, y: Int, farm: Array<BooleanArray>): Int {
     var cnt = 0
     val stack = Stack<IntArray>()
     var cabbage: IntArray
