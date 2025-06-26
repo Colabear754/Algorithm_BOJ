@@ -7,7 +7,7 @@ fun main() {
     println(add(first).plus(add(second)).toLong() * mul(third))
 }
 
-fun add(string: String):String = when (string) {
+private fun add(string: String): String = when (string) {
     "black" -> "0"
     "brown" -> "1"
     "red" -> "2"
@@ -21,7 +21,7 @@ fun add(string: String):String = when (string) {
     else -> "0"
 }
 
-fun mul(string: String):Long = when (string) {
+private fun mul(string: String): Long = when (string) {
     "black" -> 1
     "brown" -> 10
     "red" -> 100
