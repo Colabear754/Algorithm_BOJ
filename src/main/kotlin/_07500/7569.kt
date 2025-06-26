@@ -69,4 +69,4 @@ fun main() = with(System.`in`.bufferedReader()) {
     else println(day - 1)
 }
 
-class Position2(val x: Int, val y: Int, val z: Int)
+private class Position2(val x: Int, val y: Int, val z: Int)
