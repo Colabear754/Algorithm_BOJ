@@ -23,6 +23,6 @@ fun main() = with(System.`in`.bufferedReader()) {
     println(if (m > 0) -1 else result)
 }
 
-class Meat(val weight: Int, val price: Int) : Comparable<Meat> {
+private class Meat(val weight: Int, val price: Int) : Comparable<Meat> {
     override fun compareTo(other: Meat): Int = if (this.price == other.price) other.weight - this.weight else this.price - other.price
 }
