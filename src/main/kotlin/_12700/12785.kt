@@ -8,7 +8,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     println((toToast * toastToSchool) % 1000007)
 }
 
-fun comb(n: Int, k: Int): Long {
+private fun comb(n: Int, k: Int): Long {
     var a = n
     val b = minOf(k, n - k)
     var result = 1.toBigInteger()
