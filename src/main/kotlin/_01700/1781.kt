@@ -15,7 +15,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     println(acquiredRamens.sum())
 }
 
-class Problem(val deadLine: Int, val ramens: Int) : Comparable<Problem> {
+private class Problem(val deadLine: Int, val ramens: Int) : Comparable<Problem> {
     constructor(st: StringTokenizer) : this(st.nextToken().toInt(), st.nextToken().toInt())
     override fun compareTo(other: Problem) = if (this.deadLine == other.deadLine) other.ramens - this.ramens else this.deadLine - other.deadLine
 }
