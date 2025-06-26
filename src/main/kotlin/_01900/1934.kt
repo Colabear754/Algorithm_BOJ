@@ -10,5 +10,5 @@ fun main() = with(System.`in`.bufferedReader()) {
     bw.close()
 }
 
-fun gcd(a: Int, b: Int): Int = if (a % b == 0) b else gcd(b, a % b)
-fun lcm(a: Int, b: Int) = a * b / gcd(a, b)
+private fun gcd(a: Int, b: Int): Int = if (a % b == 0) b else gcd(b, a % b)
+private fun lcm(a: Int, b: Int) = a * b / gcd(a, b)
