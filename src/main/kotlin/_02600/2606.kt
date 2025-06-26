@@ -1,8 +1,8 @@
 package _02600
 
-val com = readln().toInt()
-val network = Array(com + 1) { BooleanArray(com + 1) }
-val virus = BooleanArray(com + 1)
+private val com = readln().toInt()
+private val network = Array(com + 1) { BooleanArray(com + 1) }
+private val virus = BooleanArray(com + 1)
 
 fun main() = with(System.`in`.bufferedReader()) {
     repeat(readLine().toInt()) {
@@ -16,7 +16,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     println(virus.count { it } - 1)
 }
 
-fun dfs(cur: Int) {
+private fun dfs(cur: Int) {
     if (virus[cur]) return
     virus[cur] = true
     for (i in 1..com) {
