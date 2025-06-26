@@ -50,6 +50,6 @@ private fun dfs(map: Array<IntArray>, points: MutableList<Point>) {
     }
 }
 
-class Point(val x: Int, val y: Int, val value: Int) : Comparable<Point> {
+private class Point(val x: Int, val y: Int, val value: Int) : Comparable<Point> {
     override fun compareTo(other: Point) = if (x == other.x && y == other.y) 0 else -1
 }
