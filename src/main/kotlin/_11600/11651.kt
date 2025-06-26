@@ -16,7 +16,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     bw.close()
 }
 
-class Coordinate(var x: Int, var y: Int) : Comparable<Coordinate> {
+private class Coordinate(var x: Int, var y: Int) : Comparable<Coordinate> {
     override fun compareTo(other: Coordinate) = if (this.y == other.y) this.x - other.x else this.y - other.y
     override fun toString() = "$x $y"
 }
