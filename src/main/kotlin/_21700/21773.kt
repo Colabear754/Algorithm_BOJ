@@ -23,6 +23,6 @@ fun main() = with(System.`in`.bufferedReader()) {
     bw.close()
 }
 
-class Process(val id: Int, var time: Int, var priority: Int) : Comparable<Process> {
+private class Process(val id: Int, var time: Int, var priority: Int) : Comparable<Process> {
     override fun compareTo(other: Process) = if (other.priority == this.priority) this.id - other.id else other.priority - this.priority
 }
