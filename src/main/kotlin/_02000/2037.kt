@@ -1,6 +1,6 @@
 package _02000
 
-val chars = arrayOf(
+private val chars = arrayOf(
     arrayOf('A', 'B', 'C'),
     arrayOf('D', 'E', 'F'),
     arrayOf('G', 'H', 'I'),
@@ -28,9 +28,9 @@ fun main() = with(System.`in`.bufferedReader()) {
     println(sec)
 }
 
-fun addedVal(s: String, i: Int = 0) = chars[getNum(s[i])].indexOf(s[i]) + 1
+private fun addedVal(s: String, i: Int = 0) = chars[getNum(s[i])].indexOf(s[i]) + 1
 
-fun getNum(c: Char) = when (c) {
+private fun getNum(c: Char) = when (c) {
     in 'A'..'C' -> 0
     in 'D'..'F' -> 1
     in 'G'..'I' -> 2
