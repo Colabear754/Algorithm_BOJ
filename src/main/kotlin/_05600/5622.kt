@@ -9,7 +9,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     println(sec)
 }
 
-fun getSec(c: Char) = when (c) {
+private fun getSec(c: Char) = when (c) {
     in 'A'..'C' -> 3
     in 'D'..'F' -> 4
     in 'G'..'I' -> 5
