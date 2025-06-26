@@ -33,7 +33,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     println(-1)
 }
 
-class Problem(d: Int, p: Int, t: Int, e: Int) {
+private class Problem(d: Int, p: Int, t: Int, e: Int) {
     val d = if (e == 1) d / 2 + d % 2 else d
     val p = if (t == 0) (if (e == 1) p / 2 else p) else 0
 }
