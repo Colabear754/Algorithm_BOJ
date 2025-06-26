@@ -34,7 +34,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     println(sb)
 }
 
-class Military(var num: UInt, var sign: Byte) {
+private class Military(var num: UInt, var sign: Byte) {
     override fun toString() = "${this.num}"
     override fun equals(other: Any?) = this.num == (other as Military).num && this.sign == other.sign
     override fun hashCode() = 31 * num.hashCode() + sign
