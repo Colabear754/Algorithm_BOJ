@@ -23,7 +23,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     println(min)
 }
 
-fun Int.length(): Int {
+private fun Int.length(): Int {
     var result = 1
     var arg = this
     while (arg / 10 > 0) {
@@ -34,7 +34,7 @@ fun Int.length(): Int {
     return result
 }
 
-fun isAble(arr: BooleanArray, num: Int): Boolean {
+private fun isAble(arr: BooleanArray, num: Int): Boolean {
     var arg = num
     var length = num.length()
     while (length-- > 0) {
