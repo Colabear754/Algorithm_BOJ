@@ -20,4 +20,4 @@ fun main() = with(System.`in`.bufferedReader()) {
     bw.close()
 }
 
-fun getTimeNum(time: Long) = (time / 3600) % 60 * 10000 + (time / 60) % 60 * 100 + time % 60
+private fun getTimeNum(time: Long) = (time / 3600) % 60 * 10000 + (time / 60) % 60 * 100 + time % 60
