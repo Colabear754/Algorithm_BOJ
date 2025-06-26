@@ -16,7 +16,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     bw.close()
 }
 // d진법의 맨 끝 0의 개수 = 연속으로 d로 나누어 떨어지는 횟수
-fun find_0(n: Int, d: Int): Int {
+private fun find_0(n: Int, d: Int): Int {
     var num = n
     var count = 0
     while (num > 0) {
