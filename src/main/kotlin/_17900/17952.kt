@@ -20,4 +20,4 @@ fun main() = with(System.`in`.bufferedReader()) {
     println(score)
 }
 
-class Project(val score: Int, var time: Int)
+private class Project(val score: Int, var time: Int)
